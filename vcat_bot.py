@@ -13,7 +13,8 @@ def send_message(user_id, message, keyboard = None):
                            'message': message,
                            'keyboard':keyboard.get_keyboard() if keyboard else None,}  
                           )
-
+send_message(583345771, 'Im alive!')
+      
 start_keyboard = VkKeyboard(one_time = True)  
 start_keyboard.add_button('START')
 start_keyboard.add_line()
