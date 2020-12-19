@@ -39,7 +39,17 @@ game_over_keyboard.add_button('Продолжить(просто введи чи
 food_button_keyb = VkKeyboard(one_time = True)
 food_button_keyb.add_button('author fav food')
 food_button_keyb.add_line()
-food_button_keyb.add_button('back')
+food_button_keyb.add_button('назад')
+
+doNut_keyb = VkKeyboard(one_time = True)
+doNut_button_keyb.add_button('купить нам шаурму')
+doNut_button_keyb.add_line()
+doNut_button_keyb.add_button('помолиться за нас')
+doNut_button_keyb.add_line()
+doNut_button_keyb.add_button('сказать спасибо')
+doNut_button_keyb.add_line()
+doNut_button_keyb.add_button('назад')
+
 
 gamers={}
 # Работа с сообщениями
@@ -78,15 +88,21 @@ for event in longpoll.listen():
                     
                 elif text == 'Об авторе'.lower():   
                     send_message(user_id,"Damir & Vasya2008play",food_button_keyb)
-                elif text == 'Сделать пожертвование'.lower():   
-                    send_message(user_id,"Платежка еще не подключена",back_keyboard)
+                elif text == 'Сделать пожертвование'.lower():     #payment!
+                    send_message(user_id,"Выберете тип пожертвование:",back_keyboard)
                 elif text == 'Сыграть в игру'.lower():
                     from random import randint
                     gamers[user_id] = randint(1,9000)
                     send_message(user_id,"угадывай")
                 elif text == 'author fav food':
                     send_message(user_id,"Шаурма",back_keyboard)
-                elif text == 'back':
+                elif text == 'купить нам шаурму':
+                    send_message(user_id,"По мнению автора, шаурму лучше покупать в KFC, но можно купить где хотите",back_keyboard)
+                elif text == 'помолиться за нас':
+                    send_message(user_id,"",back_keyboard)
+                elif text == 'сказать спасибо':
+                    send_message(user_id,"",back_keyboard)
+                elif text == 'назад':
                     send_message(user_id, "Продолжайте",back_keyboard)
                 elif text == 'узнать погоду'.lower():   
                     send_message(user_id,"ясно",back_keyboard)
