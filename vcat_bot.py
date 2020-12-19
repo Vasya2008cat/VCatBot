@@ -43,13 +43,13 @@ food_button_keyb.add_line()
 food_button_keyb.add_button('назад')
 
 doNut_keyb = VkKeyboard(one_time = True)
-doNut_button_keyb.add_button('купить нам шаурму')
-doNut_button_keyb.add_line()
-doNut_button_keyb.add_button('помолиться за нас')
-doNut_button_keyb.add_line()
-doNut_button_keyb.add_button('сказать спасибо')
-doNut_button_keyb.add_line()
-doNut_button_keyb.add_button('назад')
+doNut_keyb.add_button('купить нам шаурму')
+doNut_keyb.add_line()
+doNut_keyb.add_button('помолиться за нас')
+doNut_keyb.add_line()
+doNut_keyb.add_button('сказать спасибо')
+doNut_keyb.add_line()
+doNut_keyb.add_button('назад')
 
 
 gamers={}
