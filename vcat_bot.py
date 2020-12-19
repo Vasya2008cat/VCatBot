@@ -104,7 +104,7 @@ for event in longpoll.listen():
                 elif text == 'сказать спасибо':
                     send_message(user_id,"пожалуйста!",main_keyboard)
                 elif text == 'назад':
-                    send_message(user_id, "Продолжайте",back_keyboard)
+                    send_message(user_id, "Продолжайте",main_keyboard)
                 elif text == 'узнать погоду'.lower():   
                     send_message(user_id,"ясно",back_keyboard)
                 else:
