@@ -13,7 +13,6 @@ def send_message(user_id, message, keyboard = None):
                            'message': message,
                            'keyboard':keyboard.get_keyboard() if keyboard else None,}  
                           )
-send_message(583345771, 'Im alive!')
       
 start_keyboard = VkKeyboard(one_time = True)  
 start_keyboard.add_button('START')
@@ -51,6 +50,7 @@ doNut_keyb.add_button('сказать спасибо')
 doNut_keyb.add_line()
 doNut_keyb.add_button('назад')
 
+send_message(583345771, 'Im alive!', main_keyboard)
 
 gamers={}
 # Работа с сообщениями
@@ -102,7 +102,7 @@ for event in longpoll.listen():
                 elif text == 'помолиться за нас':
                     send_message(user_id,"🕯🕯🕯📋🕯🕯🕯",main_keyboard)
                 elif text == 'сказать спасибо':
-                    send_message(user_id,"",main_keyboard)
+                    send_message(user_id,"пожалуйста!",main_keyboard)
                 elif text == 'назад':
                     send_message(user_id, "Продолжайте",back_keyboard)
                 elif text == 'узнать погоду'.lower():   
