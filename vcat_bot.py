@@ -99,7 +99,7 @@ for event in longpoll.listen():
                 elif text == 'купить нам шаурму':
                     send_message(user_id,"По мнению автора, шаурму лучше покупать в KFC, но можно купить где хотите",back_keyboard)
                 elif text == 'помолиться за нас':
-                    send_message(user_id,"",back_keyboard)
+                    send_message(user_id,"🕯🕯🕯📋🕯🕯🕯",back_keyboard)
                 elif text == 'сказать спасибо':
                     send_message(user_id,"",back_keyboard)
                 elif text == 'назад':
