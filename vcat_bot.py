@@ -90,7 +90,7 @@ for event in longpoll.listen():
                 elif text == 'Об авторе'.lower():   
                     send_message(user_id,"Damir & Vasya2008play",food_button_keyb)
                 elif text == 'Сделать пожертвование'.lower():     #payment!
-                    send_message(user_id,"Выберете тип пожертвование:",back_keyboard)
+                    send_message(user_id,"Выберете тип пожертвование:",doNut_keyb)
                 elif text == 'Сыграть в игру'.lower():
                     from random import randint
                     gamers[user_id] = randint(1,9000)
