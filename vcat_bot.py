@@ -1,4 +1,5 @@
 import vk_api
+from random import choice
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard  
 key = "5cddcaf177c0066bd35aeacb30fcaa1267dc552ff93c7998b4c62d93384899b9b5617af950e73ad18dfa6"
@@ -24,7 +25,8 @@ main_keyboard.add_button('Об авторе')
 main_keyboard.add_button('Сделать пожертвование')
 main_keyboard.add_line()
 main_keyboard.add_button('Сыграть в игру')
-
+main_keyboard.add_line()
+main_keyboard.add_button('Рандом')
 main_keyboard.add_button('узнать погоду')
 
 back_keyboard = VkKeyboard(one_time = True)
@@ -95,6 +97,8 @@ for event in longpoll.listen():
                     from random import randint
                     gamers[user_id] = randint(1,9000)
                     send_message(user_id,"угадывай")
+                elif text == 'Рандом'.lower():
+                    send_message(user_id,choice(['apple', 'Half-Life 2', 'eat fries', 'be happy', 'E', 'A python prog', 'r/iamveryrandom', 'LOL', 'Do you know who he is?', 'Я Русский']),main_keyboard)
                 elif text == 'author fav food':
                     send_message(user_id,"Шаурма",back_keyboard)
                 elif text == 'купить нам шаурму':
