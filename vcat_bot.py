@@ -6,6 +6,8 @@ key = "5cddcaf177c0066bd35aeacb30fcaa1267dc552ff93c7998b4c62d93384899b9b5617af95
 # Авторизуемся как сообщество
 vk = vk_api.VkApi(token=key)
 
+file_uwu = open('whats_this.txt', 'w')
+
 def send_message(user_id, message, keyboard = None):  
                 from random import randint
                 vk.method('messages.send',
@@ -67,7 +69,7 @@ for event in longpoll.listen():
             user_id = event.user_id
             print(text)
             if user_id in gamers:
-                
+                file_uwu.write(user_id + ' wrote me')
                 try:
                     otvet = int(text)
                 except:
@@ -88,29 +90,40 @@ for event in longpoll.listen():
             else:
                 if text == 'START'.lower():   
                     send_message(user_id,"Добро пожаловать",main_keyboard)  
-                    
                 elif text == 'Об авторе'.lower():   
                     send_message(user_id,"Damir & Vasya2008play",food_button_keyb)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'Сделать пожертвование'.lower():     #payment!
                     send_message(user_id,"Выберете тип пожертвование:",doNut_keyb)
                 elif text == 'Сыграть в игру'.lower():
                     from random import randint
                     gamers[user_id] = randint(1,9000)
                     send_message(user_id,"угадывай")
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'Рандом'.lower():
                     send_message(user_id,choice(['apple', 'Half-Life 2', 'eat fries', 'be happy', 'E', 'A python prog', 'r/iamveryrandom', 'LOL', 'Do you know who he is?', 'Я Русский']),main_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'author fav food':
                     send_message(user_id,"Шаурма",back_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'купить нам шаурму':
                     send_message(user_id,"По мнению автора (нас всех), шаурму лучше покупать в KFC, но можно купить где хотите",main_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'помолиться за нас':
                     send_message(user_id,"unicode",main_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'сказать спасибо':
                     send_message(user_id,"пожалуйста!",main_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'назад':
                     send_message(user_id, "Продолжайте",main_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 elif text == 'узнать погоду'.lower():   
                     send_message(user_id,"ясно",back_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
                 else:
                     send_message(user_id,"Продолжайте",main_keyboard)
+                    file_uwu.write(user_id + ' wrote me')
+file_uwu.write('bye')
+file_uwu.close()
 
